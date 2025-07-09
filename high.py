@@ -64,6 +64,7 @@ validation_model.model = deepcopy(model.model)
 
 tp.utils.print_tool.after_pruning(model.model)
 validation_model.model.to(model.device)
+# will throw error here if using yolov8ce.pt
 metric = validation_model.val(data=DATASET_CONFIG, split="test", conf=0.5)
 pruned_map = metric.box.map
 pruned_macs, pruned_nparams = tp.utils.count_ops_and_params(
