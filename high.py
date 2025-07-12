@@ -22,10 +22,10 @@ from helper import replace_c2f_with_c2f_v2
 import torch
 
 # Configuration
-DATASET_CONFIG = "./data.yaml"
+DATASET_CONFIG = "./sample-data.yaml"
 
 # Load pre-trained YOLOv8 model
-model = YOLO("./model/realca2.pt")
+model = YOLO("./model/final-yolov8ce.pt")
 model.model.eval()  # Set model to evaluation mode
 
 # Replace C2f modules with optimized C2f_v2 modules for better performance
